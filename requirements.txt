@@ -4,3 +4,5 @@ livereload
 tornado
 libsass
 PyBabeljs
+pyobjc
+pywebview

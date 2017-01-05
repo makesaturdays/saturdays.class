@@ -9,3 +9,4 @@ config/environment_dev.py
 *.map
 *.db
 build
+/server.app

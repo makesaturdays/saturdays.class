@@ -6,6 +6,7 @@ import sys
 
 if getattr(sys, 'frozen', False):
     app_path = os.path.abspath(os.path.dirname(sys.executable))
+    app_path = app_path.replace('/server.app/Contents/MacOS', '')
 elif __file__:
     app_path = os.path.abspath(os.path.dirname(__file__))+'/..'
 
