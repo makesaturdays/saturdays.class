@@ -1,13 +1,8 @@
 
-const MyComponent = props => {
-	return <p>{props.children}</p>
-}
-
-
 
 ReactDOM.render(
-  <MyComponent>My component</MyComponent>,
-  document.getElementById('app')
+	<MyComponent>My component test</MyComponent>,
+	document.getElementById('app')
 )
 
 

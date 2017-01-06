@@ -10,3 +10,4 @@ config/environment_dev.py
 *.db
 build
 /server.app
+server
