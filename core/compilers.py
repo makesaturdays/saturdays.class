@@ -15,15 +15,12 @@ def compile_sass(input='/styles/all.scss', output='/files/all.css'):
 	return compiled
 
 
-def compile_react(input='/react_scripts', output='/files/app.js'):
-	compiled = ''
-	for filename in os.listdir(app.path+input):
-		file = open(app.path+input+'/'+filename, 'r')
-		compiled += file.read()
-		file.close()
+def compile_react(input='/react_scripts/app.js', output='/files/app.js'):
+	compiled = transformer.transform(app.path+input)
+	# compiled = open(app.path+input, 'r').read()
 
 	file = open(app.path+output, 'w')
-	file.write(transformer.transform_string(compiled))
+	file.write(compiled)
 	file.close()
 
 	return compiled

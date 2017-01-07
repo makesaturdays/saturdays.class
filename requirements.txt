@@ -1,8 +1,5 @@
 Flask
 pyinstaller
-livereload
 tornado
-libsass
-PyBabeljs
 pyobjc
 pywebview

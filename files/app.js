@@ -1,15 +1,13 @@
 'use strict';
 
-var MyComponent = function MyComponent(props) {
-	return React.createElement(
-		'p',
-		null,
-		props.children
-	);
-};
+var _component = require('./component.js');
+
+// const MyComponent = props => {
+// 	return <p>{props.children}</p>
+// }
 
 ReactDOM.render(React.createElement(
-	MyComponent,
+	_component.MyComponent,
 	null,
-	'My component test'
+	'My component'
 ), document.getElementById('app'));
