@@ -6,15 +6,14 @@
 		<meta http-equiv="Accept-CH" content="DPR,Width,Viewport-Width">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>{% block title %}Class test{% endblock %}</title>
-
+		<title>{% block title %}Class{% endblock %}</title>
 	</head>
 
 	<body>
 		<header class="header"></header>
-		<div class="main" role="main">{% block main %}{% endblock %}</div>
+		<section class="main" role="main">{% block main %}{% endblock %}</section>
 		<footer class="footer"></footer>
 
-		<script src="http://localhost:8081/app.js"></script>
+		<script src="http://localhost:8090/app.js"></script>
 	</body>
 </html>

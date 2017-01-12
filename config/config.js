@@ -1,22 +1,27 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
+const globby = require("globby");
 
 module.exports = [{
 	name: "js",
-	entry: "./scripts/app.js",
+	entry: globby.sync(["./scripts/app.js", "./layouts/**/*.html"]),
 	output: {
 		filename: "app.js",
-		publicPath: "http://localhost:8081/"
+		publicPath: "http://localhost:8090/"
 	},
 	module: {
 		loaders: [
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loaders: ["react-hot", "babel"]
+				loaders: ["react-hot", "babel?presets[]=es2015&presets[]=react"]
 			},
 			{
 				test: /\.scss$/,
 				loaders: ["style", "css", "sass"]
+			},
+			{
+				test: /\.html$/,
+				loaders: ["file?emitFile=false"]
 			}
 		]
 	},
@@ -30,6 +35,6 @@ module.exports = [{
 	devServer: {
 		hot: true,
 		inline: true,
-		port: 8081
+		port: 8090
 	}
 }]

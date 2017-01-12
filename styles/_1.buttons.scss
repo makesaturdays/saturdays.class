@@ -1,5 +1,6 @@
 .button,
 button {
+	position: relative;
 	display: inline-block;
 
 	color: white;
@@ -9,5 +10,10 @@ button {
 	text-align: center;
 
 	background: blue;
+	padding: 0.666rem;
 	border: 1px solid;
+
+	&:active {
+		top: 1px;
+	}
 }

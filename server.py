@@ -7,7 +7,6 @@ from livereload import Server
 from flask import request, abort, redirect
 
 from core import app
-from core.compilers import compile_sass, compile_react
 from core.pages import page
 
 from threading import Thread
@@ -24,18 +23,6 @@ def browser():
 
 if __name__ == '__main__':
 	if app.config['DEBUG']:
-		# server = Server(app.wsgi_app)
-		# server.watch(app.path+'/layouts/*.html')
-		# server.watch(app.path+'/layouts/**/*.html')
-		# server.watch(app.path+'/react_scripts/*.js', func=compile_react)
-		# server.watch(app.path+'/react_scripts/**/*.js', func=compile_react)
-		# server.watch(app.path+'/styles/*.scss', func=compile_sass, delay='forever')
-		# server.watch(app.path+'/styles/**/*.scss', func=compile_sass, delay='forever')
-		# server.watch(app.path+'/files/all.css')
-
-		# thread = Thread(target=server.serve, kwargs={'port': 8080})
-		# thread.daemon = True
-		# thread.start()
 
 		thread = Thread(target=app.run, kwargs={'port': 8080, 'threaded': True, 'use_reloader': False})
 		thread.daemon = True

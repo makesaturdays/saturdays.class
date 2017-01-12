@@ -1,4 +1,4 @@
 
 export const MyComponent = props => {
-	return <div>{props.children}</div>
+	return <p>{props.children}</p>
 }
