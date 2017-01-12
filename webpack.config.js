@@ -1,19 +1,22 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = [{
 	name: "js",
 	entry: "./scripts/app.js",
 	output: {
 		filename: "app.js",
-		publicPath: "http://localhost:8081/files/"
+		publicPath: "http://localhost:8081/"
 	},
 	module: {
 		loaders: [
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loaders: ["react-hot", "babel-loader"]
+				loaders: ["react-hot", "babel"]
+			},
+			{
+				test: /\.scss$/,
+				loaders: ["style", "css", "sass"]
 			}
 		]
 	},
@@ -29,21 +32,4 @@ module.exports = [{
 		inline: true,
 		port: 8081
 	}
-},{
-	name: "css",
-	entry: "./styles/all.scss",
-	output: {
-		filename: "all.css"
-	},
-	module: {
-		loaders: [
-			{
-				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
-			}
-		]
-	},
-    plugins: [
-        new ExtractTextPlugin("all.css", {allChunks: false})
-    ]
 }]

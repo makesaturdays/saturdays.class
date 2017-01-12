@@ -9,7 +9,9 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "node-sass": "^4.2.0",
+    "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-hot-loader": "^1.3.1",
@@ -23,7 +25,7 @@
     "url": ""
   },
   "scripts": {
-    "start": "webpack-dev-server --client-log-level=error"
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env=development --client-log-level=error\""
   },
   "author": "Phillip Malboeuf <phillip.malboeuf@gmail.com>",
   "dependencies": {}
