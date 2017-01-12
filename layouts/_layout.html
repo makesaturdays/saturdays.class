@@ -9,18 +9,14 @@
 		
 		<title>{% block title %}Class test{% endblock %}</title>
 
-		<link href="/files/all.css" rel="stylesheet" type="text/css">
+		{# <link href="http://localhost:8081/files/all.css" rel="stylesheet" type="text/css"> #}
 	</head>
 
 	<body>
 		<header class="header"></header>
-
 		<div class="main" role="main">{% block main %}{% endblock %}</div>
-
 		<footer class="footer"></footer>
 
-		<script src="https://unpkg.com/react@15/dist/react.js"></script>
-		<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-		<script src="/files/app.js"></script>
+		<script src="http://localhost:8081/files/app.js"></script>
 	</body>
 </html>

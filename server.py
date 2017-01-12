@@ -3,7 +3,7 @@ from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 
-# from livereload import Server
+from livereload import Server
 from flask import request, abort, redirect
 
 from core import app
@@ -36,6 +36,10 @@ if __name__ == '__main__':
 		# thread = Thread(target=server.serve, kwargs={'port': 8080})
 		# thread.daemon = True
 		# thread.start()
+
+		thread = Thread(target=app.run, kwargs={'port': 8080, 'threaded': True, 'use_reloader': False})
+		thread.daemon = True
+		thread.start()
 
 		webview.create_window('Class', 'http://localhost:8080/start')
 
